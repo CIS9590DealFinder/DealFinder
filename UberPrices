@@ -1,0 +1,30 @@
+import requests
+import json
+
+
+def find_uber_price(pickup_latitude, pickup_longitude, dropoff_latitude, dropoff_longitude):
+    url = "https://www.uber.com/api/loadFEEstimates?localeCode=en"
+
+    info = json.dumps({
+      "pickup": {
+        "latitude": pickup_latitude,
+        "longitude": pickup_longitude
+      },
+      "dropoff": {
+        "latitude": dropoff_latitude,
+        "longitude": dropoff_longitude
+      },
+      "locale": "en"
+    })
+    headers = {
+      'content-type': 'application/json',
+      'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36',
+      
+      'x-csrf-token': 'x'
+    }
+
+    data = requests.request("POST", url, headers=headers, data=info)
+    result = [[x['vehicleViewDisplayName'], x['fareString']] for x in response.json()['data']['prices']]
+    return result
+
+
