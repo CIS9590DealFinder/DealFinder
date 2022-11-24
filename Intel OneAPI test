@@ -6,4 +6,7 @@ system(wget https://raw.githubusercontent.com/CIS9590DealFinder/DealFinder/main/
 system(wget https://raw.githubusercontent.com/CIS9590DealFinder/DealFinder/main/Taxi%20Project.py) #downloads py file as an alternative
 
 system(jupyter nbconvert --execute 'Taxi Project.ipynb') #upyter not found
-system(python3 'Taxi Project.py') #no moduled named pandas
+system(python3 'Taxi Project.py') #no moduule named pandas
+
+#no permission to download packages/pip install
+#next steps: find out how to run python file/notebook through SSH without having to download packages
