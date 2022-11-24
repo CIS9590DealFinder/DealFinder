@@ -2,11 +2,11 @@ system("ssh devcloud") # Connect to devcloud
 system("cd DealFinder")
 
 system(wget https://github.com/CIS9590DealFinder/DealFinder/raw/main/taxi_tripdata.csv) #downloads data
-system(wget https://raw.githubusercontent.com/CIS9590DealFinder/DealFinder/main/Taxi%20Project.ipynb) #downloads jupyter notebook
-system(wget https://raw.githubusercontent.com/CIS9590DealFinder/DealFinder/main/Taxi%20Project.py) #downloads py file as an alternative
+system(wget https://raw.githubusercontent.com/CIS9590DealFinder/DealFinder/main/TaxiProject.py) #downloads py file as an alternative
 
-system(jupyter nbconvert --execute 'Taxi Project.ipynb') #upyter not found
-system(python3 'Taxi Project.py') #no moduule named pandas
-
-#no permission to download packages/pip install
-#next steps: find out how to run python file/notebook through SSH without having to download packages
+system(qsub -I) #split task into jobs
+system(source /opt/intel/oneapi/setvars.sh --force)
+system(pip install pandas)
+system(pip install seaborn)
+system(ipython TaxiProject.py #run python file)
+system(ls) #you can see the 4 graphs 
