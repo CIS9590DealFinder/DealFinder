@@ -1,0 +1,5 @@
+system("ssh devcloud") # Connect to devcloud
+system("mkdir DealFinder") #Make project directory
+system("cd DealFinder")
+
+system("scp taxi_tripdata.csv u169479:/DealFinder") #getting connection timed out
