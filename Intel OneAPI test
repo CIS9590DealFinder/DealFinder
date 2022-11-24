@@ -1,5 +1,9 @@
 system("ssh devcloud") # Connect to devcloud
-system("mkdir DealFinder") #Make project directory
 system("cd DealFinder")
 
-system("scp taxi_tripdata.csv u169479:/DealFinder") #getting connection timed out
+system(wget https://github.com/CIS9590DealFinder/DealFinder/raw/main/taxi_tripdata.csv) #downloads data
+system(wget https://raw.githubusercontent.com/CIS9590DealFinder/DealFinder/main/Taxi%20Project.ipynb) #downloads jupyter notebook
+system(wget https://raw.githubusercontent.com/CIS9590DealFinder/DealFinder/main/Taxi%20Project.py) #downloads py file as an alternative
+
+system(jupyter nbconvert --execute 'Taxi Project.ipynb') #upyter not found
+system(python3 'Taxi Project.py') #no moduled named pandas
