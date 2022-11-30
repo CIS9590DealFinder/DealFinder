@@ -1,12 +1,13 @@
 system("ssh devcloud") # Connect to devcloud
+system("mkdir DealFinder")
 system("cd DealFinder")
 
-system(wget https://github.com/CIS9590DealFinder/DealFinder/raw/main/taxi_tripdata.csv) #downloads data
-system(wget https://raw.githubusercontent.com/CIS9590DealFinder/DealFinder/main/TaxiProject.py) #downloads py file as an alternative
+system("wget https://github.com/CIS9590DealFinder/DealFinder/raw/main/taxi_tripdata.csv") #downloads data
+system("wget https://raw.githubusercontent.com/CIS9590DealFinder/DealFinder/main/TaxiProject.py") #downloads py file as an alternative
 
-system(qsub -I) #split task into jobs
-system(source /opt/intel/oneapi/setvars.sh --force)
-system(pip install pandas)
-system(pip install seaborn)
-system(ipython TaxiProject.py #run python file)
-system(ls) #you can see the 4 graphs 
+system("qsub -I") #split task into jobs
+system("source /opt/intel/oneapi/setvars.sh --force")
+system("pip install pandas")
+system("pip install seaborn")
+system("ipython TaxiProject.py") #run python file
+system("ls") #you can see the 4 graphs 
