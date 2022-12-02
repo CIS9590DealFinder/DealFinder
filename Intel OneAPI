@@ -1,13 +1,17 @@
-system("ssh devcloud") # Connect to devcloud
-system("mkdir DealFinder") #make folder
-system("cd DealFinder")
+Please view ReadMe for detailed instructions:
 
-system("wget https://github.com/CIS9590DealFinder/DealFinder/raw/main/taxi_tripdata.csv") #downloads data
-system("wget https://raw.githubusercontent.com/CIS9590DealFinder/DealFinder/main/TaxiProject.py") #downloads py file
+ssh devcloud
+wget https://raw.githubusercontent.com/CIS9590DealFinder/DealFinder/main/inteloneapi.sh
+qsub -l nodes=1:gpu:ppn=2 -d . inteloneapi.sh
+qsub -I -l nodes=1:gpu:ppn=2 -d .
+bash inteloneapi.sh 
 
-system("qsub -I -l nodes=1:gpu:ppn=2 -d .") #interactive mode to submit a batch job and assign one full GPU node to the job
-system("source /opt/intel/oneapi/setvars.sh --force")
-system("pip install pandas")
-system("pip install seaborn")
-system("ipython TaxiProject.py") #run python file which was too big to run without a batch job
-system("ls") #you can see the 4 graphs 
+#!/bin/bash
+rm DealFinder
+mkdir DealFinder
+cd DealFinder
+wget https://github.com/CIS9590DealFinder/DealFinder/raw/main/taxi_tripdata.csv
+wget https://raw.githubusercontent.com/CIS9590DealFinder/DealFinder/main/TaxiProject.py
+pip install seaborn
+ipython TaxiProject.py
+ls
