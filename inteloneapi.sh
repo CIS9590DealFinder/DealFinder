@@ -1,5 +1,5 @@
 #!/bin/bash
-rm DealFinder
+rm -r DealFinder
 mkdir DealFinder
 cd DealFinder
 wget https://github.com/CIS9590DealFinder/DealFinder/raw/main/taxi_tripdata.csv
