@@ -5,6 +5,8 @@ The goal of this project is to run a python file, using Intel One API. We design
 # Intel® oneAPI
 Using Intel OneAPI is a manual process. The steps are:
 
+> ssh devcloud
+
 > wget https://raw.githubusercontent.com/CIS9590DealFinder/DealFinder/main/inteloneapi.sh
 
 > qsub -l nodes=1:gpu:ppn=2 -d . inteloneapi.sh
@@ -13,4 +15,6 @@ Using Intel OneAPI is a manual process. The steps are:
 
 > bash inteloneapi.sh 
 
-This code can be input into a ssh terminal such as Git Bash. The code will download the shell script will submit jobs to a queue for execution on compute nodes. This way, we can run the code efficiently. Without splitting the jobs into compute nodes, the scripts will be too resource intensive to run.
+This code has to be inputted into a ssh terminal such as Git Bash. The code will download the shell script will submit jobs to a queue for execution on compute nodes. This way, we can run the code efficiently. Without splitting the jobs into compute nodes, the scripts will be too resource intensive to run.
+
+To connect to the devcloud, documentation can be found here: https://devcloud.intel.com/oneapi/documentation/connect-with-ssh-linux-macos/
