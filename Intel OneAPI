@@ -1,17 +1,18 @@
 Please view ReadMe for detailed instructions:
 
-ssh devcloud
-wget https://raw.githubusercontent.com/CIS9590DealFinder/DealFinder/main/inteloneapi.sh
-qsub -l nodes=1:gen9:ppn=2 -d . inteloneapi.sh
-qsub -I -l nodes=1:gen9:ppn=2 -d .
-bash inteloneapi.sh 
+ssh devcloud #connects to devcloud per https://devcloud.intel.com/oneapi/documentation/connect-with-ssh-linux-macos/ (option 1: automated configuration)
+wget https://raw.githubusercontent.com/CIS9590DealFinder/DealFinder/main/inteloneapi.sh #downloads shell script from github
+qsub -l nodes=1:gen9:ppn=2 -d . inteloneapi.sh #submits shell script as a batch job
+qsub -I -l nodes=1:gen9:ppn=2 -d . #request interactive mode
+bash inteloneapi.sh #executes shell script below
 
 #!/bin/bash
-rm -r DealFinder
-mkdir DealFinder
-cd DealFinder
-wget https://github.com/CIS9590DealFinder/DealFinder/raw/main/taxi_tripdata.csv
-wget https://raw.githubusercontent.com/CIS9590DealFinder/DealFinder/main/TaxiProject.py
+rm -r DealFinder #cleans directory if script was ran more than once
+mkdir DealFinder #makes directory
+cd DealFinder 
+wget https://github.com/CIS9590DealFinder/DealFinder/raw/main/taxi_tripdata.csv #downloads data from github
+wget https://raw.githubusercontent.com/CIS9590DealFinder/DealFinder/main/TaxiProject.py #downloads python file from github
+pip install pandas #install dependencies
 pip install seaborn
-ipython TaxiProject.py
-ls
+ipython TaxiProject.py #runs python file
+ls #lists files in folder - you can see there are graphs in the folder
