@@ -1,4 +1,4 @@
-#1/bin/bash
+#!/bin/bash
 rm DealFinder
 mkdir DealFinder
 cd DealFinder
