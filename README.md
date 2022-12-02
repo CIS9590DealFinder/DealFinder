@@ -2,7 +2,8 @@
 # Introduction
 The goal of this project is to run a python file, using Intel One API. We designed a python script to analyze past taxi data from a kaggle dataset: https://www.kaggle.com/datasets/anandaramg/taxi-trip-data-nyc. 
 
-# Intel® oneAPI
+# Intel® oneAPI via Devcloud
+To connect to the devcloud, documentation can be found here: https://devcloud.intel.com/oneapi/documentation/connect-with-ssh-linux-macos/
 Using Intel OneAPI is a manual process. The steps are:
 
 > ssh devcloud
@@ -17,4 +18,4 @@ Using Intel OneAPI is a manual process. The steps are:
 
 This code has to be inputted into a ssh terminal such as Git Bash. The code will download the shell script will submit jobs to a queue for execution on compute nodes. This way, we can run the code efficiently. Without splitting the jobs into compute nodes, the scripts will be too resource intensive to run.
 
-To connect to the devcloud, documentation can be found here: https://devcloud.intel.com/oneapi/documentation/connect-with-ssh-linux-macos/
+
