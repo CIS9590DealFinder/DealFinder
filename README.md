@@ -11,12 +11,12 @@ Using Intel OneAPI is a manual process but we have automated it as much as possi
 
 > wget https://raw.githubusercontent.com/CIS9590DealFinder/DealFinder/main/inteloneapi.sh
 
-> qsub -l nodes=1:gpu:ppn=2 -d . inteloneapi.sh
+> qsub -l nodes=1:gen9:ppn=2 -d . inteloneapi.sh
 
-> qsub -I -l nodes=1:gpu:ppn=2 -d .
+> qsub -I -l nodes=1:gen9:ppn=2 -d .
 
 > bash inteloneapi.sh 
 
-This code has to be inputted into a ssh terminal such as Git Bash. The code will download the shell script and executes it by submit jobs to a queue for execution. By taking advantage of Intel OneAPI and hetergoenous computing, the code was able to run efficiently. Without splitting the jobs into compute nodes, the scripts would have been too resource intensive to run.
+This code has to be inputted into a SSH terminal such as Git Bash. The code will download the shell script and executes it by submit jobs to a queue for execution. By taking advantage of Intel OneAPI and hetergoenous computing, the code was able to run efficiently. Without splitting the jobs into compute nodes, the scripts would have been too resource intensive to run.
 
 
