@@ -2,8 +2,8 @@ Please view ReadMe for detailed instructions:
 
 ssh devcloud
 wget https://raw.githubusercontent.com/CIS9590DealFinder/DealFinder/main/inteloneapi.sh
-qsub -l nodes=1:gpu:ppn=2 -d . inteloneapi.sh
-qsub -I -l nodes=1:gpu:ppn=2 -d .
+qsub -l nodes=1:gen9:ppn=2 -d . inteloneapi.sh
+qsub -I -l nodes=1:gen9:ppn=2 -d .
 bash inteloneapi.sh 
 
 #!/bin/bash
