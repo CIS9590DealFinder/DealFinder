@@ -17,6 +17,6 @@ Using Intel OneAPI is a manual process but we have automated it as much as possi
 
 > bash inteloneapi.sh 
 
-This code has to be inputted into a ssh terminal such as Git Bash. The code will download the shell script will submit jobs to a queue for execution on compute nodes. This way, we can run the code efficiently. Without splitting the jobs into compute nodes, the scripts will be too resource intensive to run.
+This code has to be inputted into a ssh terminal such as Git Bash. The code will download the shell script and executes it by submit jobs to a queue for execution. By taking advantage of Intel OneAPI and hetergoenous computing, the code was able to run efficiently. Without splitting the jobs into compute nodes, the scripts would have been too resource intensive to run.
 
 
