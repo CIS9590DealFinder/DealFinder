@@ -11,9 +11,9 @@ Using Intel OneAPI is a manual process but we have automated it as much as possi
 
 > wget https://raw.githubusercontent.com/CIS9590DealFinder/DealFinder/main/inteloneapi.sh
 
-> qsub -l nodes=1:gen9:ppn=2 -d . inteloneapi.sh
+> qsub -l nodes=2:gen9:ppn=2 -d . inteloneapi.sh
 
-> qsub -I -l nodes=1:gen9:ppn=2 -d .
+> qsub -I -l nodes=2:gen9:ppn=2 -d .
 
 > bash inteloneapi.sh 
 
