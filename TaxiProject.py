@@ -52,17 +52,11 @@ ax2.set_xlabel("Day of Week",fontsize=18)
 plt.title('Average Tip Percent by Day', fontsize=20)
 plt.savefig("Tip_Day.png",dpi=300)
 plt.show()
-
-
 plt.figure(figsize= (20, 10))
 tip_pct_hour = df.groupby('hour')['tip_pct'].mean().reset_index()
 ax3 = sns.barplot(x='hour',y='tip_pct',data=tip_pct_hour,color='royalblue')
-
 ax3.set_ylabel("Percent of Tip",fontsize=18)
 ax3.set_xlabel("Hour of Day",fontsize=18)
 plt.title('Average Tip Percent by Hour', fontsize=20)
-
 plt.savefig("Tip_Hour.png",dpi=300)
-
 plt.show()
-
