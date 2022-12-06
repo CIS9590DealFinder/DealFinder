@@ -3,7 +3,7 @@ Please view ReadMe for detailed instructions:
 ssh devcloud #connects to devcloud per https://devcloud.intel.com/oneapi/documentation/connect-with-ssh-linux-macos/ (option 1: automated configuration)
 wget https://raw.githubusercontent.com/CIS9590DealFinder/DealFinder/main/inteloneapi.sh #downloads shell script from github
 qsub -l nodes=2:gen9:ppn=2 -d . inteloneapi.sh #submits shell script as a batch job using Intel® UHD Graphics P630
-qsub -I -l nodes=2:gen9:ppn=2 -d . #request interactive mode
+qsub -I -l nodes=2:gen9:ppn=2 -d . #request interactive mode per https://devcloud.intel.com/oneapi/documentation/job-submission/
 bash inteloneapi.sh #executes shell script below
 
 #!/bin/bash
