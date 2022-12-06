@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 # coding: utf-8
-
+#importing dependencies
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import warnings
 warnings.filterwarnings("ignore")
-
+#cleaning data
 df = pd.read_csv('taxi_tripdata.csv')
 df = df.drop(['ehail_fee', 'VendorID', 'trip_type', 'congestion_surcharge','store_and_fwd_flag','RatecodeID','payment_type'], axis= 1)
 df = df[df['total_amount'] > 0]
@@ -32,7 +32,7 @@ df['week'] = df['lpep_pickup_datetime'].dt.day_name()
 
 df['hour'] = df['lpep_pickup_datetime'].dt.hour
 
-
+#data visualization
 days= ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
 plt.figure(figsize= (20, 10))
 Day = df.groupby('week')['PULocationID'].count().reindex(days).reset_index()
