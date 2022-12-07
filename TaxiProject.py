@@ -31,7 +31,7 @@ sns.set_style("darkgrid")
 #data visualization
 ax = sns.barplot(x="week", y="PULocationID",data=Day)
 ax.set_ylabel("Number of Rides")
-ax.set_xlabel("Day of Week"
+ax.set_xlabel("Day of Week")
 plt.title('Number of Rides by Day')
 plt.savefig("Rides_Day.png",dpi=300)
 plt.clf()
